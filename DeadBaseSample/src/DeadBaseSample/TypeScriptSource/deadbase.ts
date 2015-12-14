@@ -38,10 +38,12 @@ var AllConcerts: ConcertSet[] = [
                 <span class="badge">{{concert.date}}</span> {{concert.venue}} {{concert.set}}
             </li>
         </ul>
-        <h2>{{selectedConcert.date}} -- {{selectedConcert.venue}} Details!</h2>
-        <div><label>date: </label><input [(ng-model)]="selectedConcert.date" type="date"></div>
-        <div><label>venue: </label><input [(ng-model)]="selectedConcert.venue" placeholder="venue"></div>
-        <div><label>set: </label><input [(ng-model)]="selectedConcert.set" type="number"></div>
+        <div *ng-if="selectedConcert">
+            <h2>{{selectedConcert.date}} -- {{selectedConcert.venue}} Details!</h2>
+            <div><label>date: </label><input [(ng-model)]="selectedConcert.date" type="date"></div>
+            <div><label>venue: </label><input [(ng-model)]="selectedConcert.venue" placeholder="venue"></div>
+            <div><label>set: </label><input [(ng-model)]="selectedConcert.set" type="number"></div>
+        </div>
     `,
     directives: [FORM_DIRECTIVES, NgFor],
     styles: [`
