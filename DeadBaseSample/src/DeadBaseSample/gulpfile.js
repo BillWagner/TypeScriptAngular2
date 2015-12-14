@@ -20,6 +20,12 @@ gulp.task('install-js', function () {
     .pipe(gulp.dest('wwwroot/app/'))
 });
 
+gulp.task('install-ts', function () {
+    gulp.src('TypeScriptSource/*.ts')
+    .pipe(gulp.dest('wwwroot/app/'))
+});
+
+
 gulp.task('compile-ts', function () {
     var tsProject = tsc.createProject('TypeScriptSource/tsconfig.json');
     var sourceTsFiles = ['TypeScriptSource/*.ts', //path to typescript files 
