@@ -32,6 +32,12 @@ var AllConcerts: ConcertSet[] = [
     selector: 'deadbase-app',
     template: `
         <h1>{{title}}</h1>
+        <h2>My Tape List</h2>
+        <ul class="concerts">
+            <li>
+                <!-- Each concert goes here -->
+            </li>
+        </ul>
         <h2>{{concert.date}} -- {{concert.venue}} Details!</h2>
         <div><label>date: </label><input [(ng-model)]="concert.date" type="date"></div>
         <div><label>venue: </label><input [(ng-model)]="concert.venue" placeholder="venue"></div>
@@ -41,6 +47,9 @@ var AllConcerts: ConcertSet[] = [
 })
 class DeadBaseAppComponent {
     public title = "Deadbase - Grateful Dead Concert Archive";
+
+    public concerts = AllConcerts;
+
     public concert: ConcertSet = {
         date: "1971-07-02",
         venue: "Filmore West",
