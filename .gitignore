@@ -43,6 +43,10 @@ dlldata.c
 # DNX
 project.lock.json
 artifacts/
+#Ignore the /plugins and /platforms folders of the app; these should be generated automatically.
+*/*/node_modules/**
+*/*/*/wwwroot/**
+
 
 *_i.c
 *_p.c
