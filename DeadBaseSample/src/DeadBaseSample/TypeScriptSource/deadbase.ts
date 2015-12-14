@@ -1,7 +1,7 @@
-﻿import { bootstrap, Component, NgModel } from 'angular2/angular2';
+﻿import { bootstrap, Component, FORM_DIRECTIVES } from 'angular2/angular2';
 
 class ConcertSet {
-    date: Date;
+    date: string;
     venue: string;
     set: number;
 }
@@ -11,17 +11,17 @@ class ConcertSet {
     selector: 'deadbase-app',
     template: `
         <h1>{{title}}</h1>
-        <h2>{{concert.date.toDateString()}} -- {{concert.venue}} Details!</h2>
-        <div><label>date: </label><input [(ng-model)]="concert.date"></div>
+        <h2>{{concert.date}} -- {{concert.venue}} Details!</h2>
+        <div><label>date: </label><input [(ng-model)]="concert.date" type="date"></div>
         <div><label>venue: </label><input [(ng-model)]="concert.venue" placeholder="venue"></div>
         <div><label>set: </label><input [(ng-model)]="concert.set" type="number"></div>
     `,
-    directives: [NgModel]
+    directives: [FORM_DIRECTIVES]
 })
 class DeadBaseAppComponent {
     public title = "Deadbase - Grateful Dead Concert Archive";
     public concert: ConcertSet = {
-        date: new Date(1971, 7, 2),
+        date: "1971-07-02",
         venue: "Filmore West",
         set: 2
     }
