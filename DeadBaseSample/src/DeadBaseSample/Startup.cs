@@ -22,10 +22,7 @@ namespace DeadBaseSample
         {
             app.UseIISPlatformHandler();
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseStaticFiles();
         }
 
         // Entry point for the application.
