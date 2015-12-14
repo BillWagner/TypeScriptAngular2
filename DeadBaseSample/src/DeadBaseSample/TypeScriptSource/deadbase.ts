@@ -34,8 +34,8 @@ var AllConcerts: ConcertSet[] = [
         <h1>{{title}}</h1>
         <h2>My Tape List</h2>
         <ul class="concerts">
-            <li>
-                <!-- Each concert goes here -->
+            <li *ng-for="#concert of concerts">
+                <span class="badge">{{concert.date}}</span> {{concert.venue}} {{concert.set}}
             </li>
         </ul>
         <h2>{{concert.date}} -- {{concert.venue}} Details!</h2>
