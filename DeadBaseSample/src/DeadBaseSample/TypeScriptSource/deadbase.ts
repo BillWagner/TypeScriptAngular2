@@ -6,7 +6,7 @@ class ConcertSet {
     set: number;
 }
 
-var concerts: ConcertSet[] = [
+var AllConcerts: ConcertSet[] = [
     { date: "1971-07-02", venue: "Filmore West", set: 1 },
     { date: "1971-07-02", venue: "Filmore West", set: 2 },
     { date: "1971-12-14", venue: "Hill Auditorium", set: 1 },
