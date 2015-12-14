@@ -46,6 +46,7 @@ artifacts/
 #Ignore the /plugins and /platforms folders of the app; these should be generated automatically.
 */*/node_modules/**
 */*/*/wwwroot/**
+*/*/*/TypeScriptSource/*.js
 
 
 *_i.c
