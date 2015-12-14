@@ -1,4 +1,4 @@
-﻿import { bootstrap, Component, FORM_DIRECTIVES } from 'angular2/angular2';
+﻿import { bootstrap, Component, FORM_DIRECTIVES, NgFor } from 'angular2/angular2';
 
 class ConcertSet {
     date: string;
@@ -43,7 +43,7 @@ var AllConcerts: ConcertSet[] = [
         <div><label>venue: </label><input [(ng-model)]="concert.venue" placeholder="venue"></div>
         <div><label>set: </label><input [(ng-model)]="concert.set" type="number"></div>
     `,
-    directives: [FORM_DIRECTIVES]
+    directives: [FORM_DIRECTIVES, NgFor]
 })
 class DeadBaseAppComponent {
     public title = "Deadbase - Grateful Dead Concert Archive";
