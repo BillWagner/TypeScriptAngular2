@@ -1,4 +1,4 @@
-﻿import { bootstrap, Component, FORM_DIRECTIVES, NgFor, NgIf, NgClass } from 'angular2/angular2';
+﻿import { bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES } from 'angular2/angular2';
 
 class ConcertSet {
     date: string;
@@ -47,7 +47,7 @@ var AllConcerts: ConcertSet[] = [
             <div><label>set: </label><input [(ng-model)]="selectedConcert.set" type="number"></div>
         </div>
     `,
-    directives: [FORM_DIRECTIVES, NgFor, NgIf, NgClass],
+    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES],
     styles: [`
       .concerts {list-style-type: none; margin-left: 1em; padding: 0; width: 30em;}
       .concerts li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }
