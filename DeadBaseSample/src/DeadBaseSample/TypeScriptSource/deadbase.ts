@@ -34,7 +34,7 @@ var AllConcerts: ConcertSet[] = [
         <h1>{{title}}</h1>
         <h2>My Tape List</h2>
         <ul class="concerts">
-            <li *ng-for="#concert of concerts">
+            <li *ng-for="#concert of concerts" (click)="onselect(concert)">
                 <span class="badge">{{concert.date}}</span> {{concert.venue}} {{concert.set}}
             </li>
         </ul>
@@ -59,18 +59,17 @@ var AllConcerts: ConcertSet[] = [
         top: -1px;
       }
       .selected { background-color: #EEE; color: #369; }
-  `],
-
+  `]
 })
 class DeadBaseAppComponent {
     public title = "Deadbase - Grateful Dead Concert Archive";
 
     public concerts = AllConcerts;
 
-    public concert: ConcertSet = {
-        date: "1971-07-02",
-        venue: "Filmore West",
-        set: 2
+    public selectedConcert: ConcertSet;
+
+    onselect(concert: ConcertSet) {
+        this.selectedConcert = concert;
     }
 }
 
