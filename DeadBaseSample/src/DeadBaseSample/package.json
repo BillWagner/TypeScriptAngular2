@@ -2,7 +2,15 @@
   "version": "1.0.0",
   "name": "ASP.NET",
   "private": true,
+  "dependencies": {
+    "angular2": "2.0.0-alpha.44",
+    "systemjs": "0.19.6"
+  },
   "devDependencies": {
-    "gulp": "3.9.0"
+    "gulp": "3.9.0",
+    "typescript": "1.7.3",
+    "gulp-typescript": "2.10.0",
+    "gulp-sourcemaps": "1.6.0"
   }
 }
+
