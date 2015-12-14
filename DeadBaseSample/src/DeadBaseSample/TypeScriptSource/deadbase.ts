@@ -12,9 +12,9 @@ class ConcertSet {
     template: `
         <h1>{{title}}</h1>
         <h2>{{concert.date.toDateString()}} -- {{concert.venue}} Details!</h2>
-        <div><label>date: </label><input value="{{concert.date.toDateString()}}" type="date"></div>
-        <div><label>venue: </label><input value="{{concert.venue}}" placeholder="venue"></div>
-        <div><label>set: </label><input value="{{concert.set}}" type="number"></div>
+        <div><label>date: </label><input [(ng-model)]="concert.date"></div>
+        <div><label>venue: </label><input [(ng-model)]="concert.venue" placeholder="venue"></div>
+        <div><label>set: </label><input [(ng-model)]="concert.set" type="number"></div>
     `
 })
 class DeadBaseAppComponent {
