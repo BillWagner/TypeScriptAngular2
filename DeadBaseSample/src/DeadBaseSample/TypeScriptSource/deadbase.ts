@@ -1,4 +1,4 @@
-﻿import { bootstrap, Component } from 'angular2/angular2';
+﻿import { bootstrap, Component, NgModel } from 'angular2/angular2';
 
 class ConcertSet {
     date: Date;
@@ -15,7 +15,8 @@ class ConcertSet {
         <div><label>date: </label><input [(ng-model)]="concert.date"></div>
         <div><label>venue: </label><input [(ng-model)]="concert.venue" placeholder="venue"></div>
         <div><label>set: </label><input [(ng-model)]="concert.set" type="number"></div>
-    `
+    `,
+    directives: [NgModel]
 })
 class DeadBaseAppComponent {
     public title = "Deadbase - Grateful Dead Concert Archive";
