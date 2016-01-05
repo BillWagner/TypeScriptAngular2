@@ -3,13 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <title>First TypeScript sample</title>
+    <script src="app/angular2-polyfills.js"></script>
     <script src="app/system.src.js"></script>
+    <script src="app/Rx.js"></script>
     <script src="app/angular2.dev.js"></script>
     <script>
         System.config({
             packages: {'app': {defaultExtension: 'js'}}
       });
-      System.import('./app/deadbase');
+        System.import('app/boot')
+            .then(null, console.error.bind(console));
     </script>
 </head>
 <body>
