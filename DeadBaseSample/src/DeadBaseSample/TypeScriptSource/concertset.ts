@@ -1,5 +1,5 @@
 ﻿export interface ConcertSet {
-    date: Date;
+    date: string;
     venue: string;
     set: number;
 }
