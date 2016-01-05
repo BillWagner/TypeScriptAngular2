@@ -1,4 +1,4 @@
-﻿import { bootstrap, Component } from 'angular2/angular2';
+﻿import {  Component } from 'angular2/core';
 
 class ConcertSet {
     date: Date;
@@ -17,7 +17,7 @@ class ConcertSet {
         <div><label>set: </label>{{concert.set}}</div>
     `
 })
-class DeadBaseAppComponent {
+export class DeadBaseAppComponent {
     public title = "Deadbase - Grateful Dead Concert Archive";
     public concert: ConcertSet = {
         date: new Date(1971, 7, 2),
@@ -25,7 +25,5 @@ class DeadBaseAppComponent {
         set: 2
     }
 }
-
-bootstrap(DeadBaseAppComponent);
 
 
