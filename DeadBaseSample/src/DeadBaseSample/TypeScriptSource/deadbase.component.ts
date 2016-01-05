@@ -1,10 +1,5 @@
-﻿import {  Component } from 'angular2/core';
-
-class ConcertSet {
-    date: Date;
-    venue: string;
-    set: number;
-}
+﻿import { Component } from 'angular2/core';
+import { ConcertSet } from './concertset';
 
 
 @Component({
