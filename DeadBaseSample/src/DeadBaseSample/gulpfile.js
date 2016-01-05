@@ -15,8 +15,10 @@ gulp.task('install-html', function () {
 });
 
 gulp.task('install-js', function () {
-    gulp.src(['node_modules/systemjs/dist/system.src.js',
-        'node_modules/angular2/bundles/angular2.dev.js'])
+    gulp.src(['node_modules/angular2/bundles/angular2-polyfills.js',
+       'node_modules/systemjs/dist/system.src.js',
+       'node_modules/rxjs/bundles/Rx.js',
+       'node_modules/angular2/bundles/angular2.dev.js'])
     .pipe(gulp.dest('wwwroot/app/'))
 });
 

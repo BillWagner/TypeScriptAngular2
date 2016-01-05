@@ -1,11 +1,5 @@
-﻿import { bootstrap, Component, FORM_DIRECTIVES } from 'angular2/angular2';
-
-class ConcertSet {
-    date: string;
-    venue: string;
-    set: number;
-}
-
+import { Component } from 'angular2/core';
+import { ConcertSet } from './concertset';
 
 @Component({
     selector: 'deadbase-app',
@@ -18,7 +12,7 @@ class ConcertSet {
     `,
     directives: [FORM_DIRECTIVES]
 })
-class DeadBaseAppComponent {
+export class DeadBaseAppComponent {
     public title = "Deadbase - Grateful Dead Concert Archive";
     public concert: ConcertSet = {
         date: "1971-07-02",
@@ -26,7 +20,5 @@ class DeadBaseAppComponent {
         set: 2
     }
 }
-
-bootstrap(DeadBaseAppComponent);
 
 
