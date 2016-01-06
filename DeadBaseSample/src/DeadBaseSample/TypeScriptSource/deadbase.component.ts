@@ -9,7 +9,8 @@ import { AllConcerts } from './mock-concerts';
         <h1>{{title}}</h1>
         <h2>My Tape List</h2>
         <ul class="concerts">
-            <li *ngFor="#concert of concerts">
+            <li *ngFor="#concert of concerts"
+                (click)="onselect(concert)">
                 <span class="badge">{{concert.date}}</span> {{concert.venue}} {{concert.set}}
             </li>
         </ul>
@@ -41,9 +42,8 @@ export class DeadBaseAppComponent {
 
     public concerts = AllConcerts;
 
-    public concert: ConcertSet = {
-        date: "1971-07-02",
-        venue: "Filmore West",
-        set: 2
-    }
-}
+    public selectedConcert: ConcertSet;
+
+    onselect(concert: ConcertSet) {
+        this.selectedConcert = concert;
+    }}
