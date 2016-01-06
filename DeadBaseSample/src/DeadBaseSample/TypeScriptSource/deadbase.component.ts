@@ -11,7 +11,8 @@ import { ConcertComponent } from './concert-detail.component';
         <h2>My Tape List</h2>
         <ul class="concerts">
             <li *ngFor="#concert of concerts"
-                (click)="onselect(concert)">
+                (click)="onselect(concert)"
+                [class.selected] = "concert == selectedConcert">
                 <span class="badge">{{concert.date}}</span> {{concert.venue}} {{concert.set}}
             </li>
         </ul>
