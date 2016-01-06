@@ -2,6 +2,7 @@ import { Component } from 'angular2/core';
 import { ConcertSet } from './concertset';
 
 import { AllConcerts } from './mock-concerts';
+import { ConcertComponent } from './concert-detail.component';
 
 @Component({
     selector: 'deadbase-app',
@@ -14,12 +15,7 @@ import { AllConcerts } from './mock-concerts';
                 <span class="badge">{{concert.date}}</span> {{concert.venue}} {{concert.set}}
             </li>
         </ul>
-        <div *ngIf="selectedConcert">
-            <h2>{{selectedConcert.date}} -- {{selectedConcert.venue}} Details!</h2>
-            <div><label>date: </label><input [(ngModel)]="selectedConcert.date" type="date"></div>
-            <div><label>venue: </label><input [(ngModel)]="selectedConcert.venue" placeholder="venue"></div>
-            <div><label>set: </label><input [(ngModel)]="selectedConcert.set" type="number"></div>
-        </div>
+        <deadbase-concert [concert]="selectedConcert"></deadbase-concert>
     `,
     styles: [`
       .concerts {list-style-type: none; margin-left: 1em; padding: 0; width: 30em;}
@@ -37,6 +33,7 @@ import { AllConcerts } from './mock-concerts';
       }
       .selected { background-color: #EEE; color: #369; }
   `],
+    directives: [ConcertComponent]
 
 })
 export class DeadBaseAppComponent {
@@ -48,4 +45,5 @@ export class DeadBaseAppComponent {
 
     onselect(concert: ConcertSet) {
         this.selectedConcert = concert;
-    }}
+    }
+}
