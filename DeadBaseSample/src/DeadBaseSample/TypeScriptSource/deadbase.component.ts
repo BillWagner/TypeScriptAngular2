@@ -14,10 +14,12 @@ import { AllConcerts } from './mock-concerts';
                 <span class="badge">{{concert.date}}</span> {{concert.venue}} {{concert.set}}
             </li>
         </ul>
-        <h2>{{concert.date}} -- {{concert.venue}} Details!</h2>
-        <div><label>date: </label><input [(ngModel)]="concert.date" type="date"></div>
-        <div><label>venue: </label><input [(ngModel)]="concert.venue" placeholder="venue"></div>
-        <div><label>set: </label><input [(ngModel)]="concert.set" type="number"></div>
+        <div *ngIf="selectedConcert">
+            <h2>{{selectedConcert.date}} -- {{selectedConcert.venue}} Details!</h2>
+            <div><label>date: </label><input [(ngModel)]="selectedConcert.date" type="date"></div>
+            <div><label>venue: </label><input [(ngModel)]="selectedConcert.venue" placeholder="venue"></div>
+            <div><label>set: </label><input [(ngModel)]="selectedConcert.set" type="number"></div>
+        </div>
     `,
     styles: [`
       .concerts {list-style-type: none; margin-left: 1em; padding: 0; width: 30em;}
