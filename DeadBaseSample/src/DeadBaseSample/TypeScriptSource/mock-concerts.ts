@@ -1,4 +1,4 @@
-﻿import { ConcertSet } from './concertset';
+import {ConcertSet} from './concertset';
 
 export var AllConcerts: ConcertSet[] = [
     { date: "1971-07-02", venue: "Filmore West", set: 1 },
