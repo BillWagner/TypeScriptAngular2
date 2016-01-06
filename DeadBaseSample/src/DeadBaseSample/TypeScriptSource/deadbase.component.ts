@@ -1,7 +1,8 @@
 import { Component } from 'angular2/core';
+import { OnInit } from 'angular2/core';
 import { ConcertSet } from './concertset';
 
-import { AllConcerts } from './mock-concerts';
+import { DeadbaseService } from './deadbase-service';
 import { ConcertComponent } from './concert-detail.component';
 
 @Component({
@@ -33,17 +34,24 @@ import { ConcertComponent } from './concert-detail.component';
       }
       .selected { background-color: #EEE; color: #369; }
   `],
-    directives: [ConcertComponent]
+    directives: [ConcertComponent],
+    providers: [ DeadbaseService ]
 
 })
-export class DeadBaseAppComponent {
+export class DeadBaseAppComponent implements OnInit {
+    constructor(private _deadbaseService: DeadbaseService) { }
+
     public title = "Deadbase - Grateful Dead Concert Archive";
 
-    public concerts = AllConcerts;
+    public concerts: ConcertSet[];
 
     public selectedConcert: ConcertSet;
 
     onselect(concert: ConcertSet) {
         this.selectedConcert = concert;
+    }
+
+    ngOnInit() {
+        this._deadbaseService.getConcerts().then(c => this.concerts = c);
     }
 }
